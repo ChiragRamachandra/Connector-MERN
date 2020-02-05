@@ -1,0 +1,23 @@
+{
+  "name": "devconnector",
+  "version": "1.0.0",
+  "description": "MERN Stack tutorial",
+  "license": "MIT",
+  "scripts": {
+    "start": "node server",
+    "server": "nodemon server"
+  },
+  "dependencies": {
+    "config": "^3.2.4",
+    "express": "^4.17.1",
+    "express-validator": "^6.3.0",
+    "gravatar": "^1.8.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.8.1",
+    "request": "^2.88.0"
+  },
+  "devDependencies": {
+    "concurrently": "^5.0.2",
+    "nodemon": "^2.0.2"
+  }
+}
