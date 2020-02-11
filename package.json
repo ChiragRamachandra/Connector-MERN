@@ -8,6 +8,8 @@
     "server": "nodemon server"
   },
   "dependencies": {
+    "bcrypt": "^3.0.8",
+    "bcryptjs": "^2.4.3",
     "config": "^3.2.4",
     "express": "^4.17.1",
     "express-validator": "^6.3.0",
