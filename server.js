@@ -12,6 +12,8 @@ connectDB();
 
 app.get('/', (req,res)=> res.send('Api running'));
 
+app.get('/trial', (req,res)=> res.send('Api running Trial'));
+
 //Define Routes
 app.use ('/api/users', require('./routes/api/users'));
 app.use ('/api/auth', require('./routes/api/auth'));
