@@ -1,5 +1,4 @@
 {
-"mongoURI": "mongodb+srv://admin:admin@testcluster-gxvyq.mongodb.net/test?retryWrites=true&w=majority",
-"jwtSecret": "secretToken"
+    "mongoURI": "mongodb+srv://admin:admin@testcluster-gxvyq.mongodb.net/test?retryWrites=true&w=majority",
+    "jwtSecret": "secretToken"
 }
-
