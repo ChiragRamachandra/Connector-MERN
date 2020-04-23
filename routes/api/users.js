@@ -18,14 +18,14 @@ const User = require('../../models/User');
 // @access Public
 
 router.post('/', [
-        check('name', 'Name is required').not().isEmpty(),
-        check('email', 'Email is not valid').isEmail(),
-        check('password', 'psasword is not valid').isLength({
-            min: 6
-        })
-    ],
+    check('name', 'Name is required').not().isEmpty(),
+    check('email', 'Email is not valid').isEmail(),
+    check('password', 'psasword is not valid').isLength({
+        min: 6
+    })
+],
 
-    async(req, res) => {
+    async (req, res) => {
 
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
@@ -86,8 +86,8 @@ router.post('/', [
 
             jwt.sign(payload,
                 config.get('jwtSecret'), {
-                    expiresIn: 360000
-                },
+                expiresIn: 360000
+            },
                 (err, token) => {
                     if (err) throw err;
                     res.json(token);
@@ -110,12 +110,12 @@ router.post('/', [
 
 
 router.post('/login', [
-        check('email', 'Email is not valid').isEmail(),
-        check('password', 'psasword is not valid').isLength({
-            min: 6
-        })
-    ],
-    async(req, res) => {
+    check('email', 'Email is not valid').isEmail(),
+    check('password', 'psasword is not valid').isLength({
+        min: 6
+    })
+],
+    async (req, res) => {
 
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
@@ -147,8 +147,6 @@ router.post('/login', [
             // Check Password
             const isMatch = await bcrypt.compare(password, user.password);
 
-            console.log(isMatch);
-
             if (isMatch) {
 
                 const payload = {
@@ -164,8 +162,8 @@ router.post('/login', [
                 jwt.sign(
                     payload,
                     config.get('jwtSecret'), {
-                        expiresIn: 36000000
-                    },
+                    expiresIn: 36000000
+                },
                     (err, token) => {
                         return res.json({
 
@@ -173,6 +171,8 @@ router.post('/login', [
                         });
                     }
                 );
+
+
             } else {
                 return res.status(400).json({
                     msg: "Password Incorrect"
